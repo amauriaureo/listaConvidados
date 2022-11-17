@@ -39,7 +39,18 @@
                 var elConvidado = document.createElement("li")
                 var elNome = document.createTextNode(convidado.nome);
 
-                elConvidado.appendChild(elNome);
+                var elExcluir = document.createElement("a")
+                elExcluir.setAttribute("href", "#") // clicavel
+                elExcluir.onclick = function () {
+                    alert("click")
+                }
+
+
+                var elExcluirTexto = document.createTextNode("Excluir");
+
+                elExcluir.appendChild(elExcluirTexto)
+                elConvidado.appendChild(elNome)
+                elConvidado.appendChild(elExcluir);
                 elLista.appendChild(elConvidado);
             }
         }
