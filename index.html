@@ -26,19 +26,35 @@
         var elBotao = document.getElementById("botao");
 
         var convidados = [
-            {id: 1, nome: "A", idade: 4},
-            {id: 2, nome: "E", idade: 3},
-            {id: 3, nome: "I", idade: 2},
-            {id: 4, nome: "O", idade: 1}
+            {nome: "A"},
+            {nome: "E"},
+            {nome: "I"},
+            {nome: "O"}
         ];
 
-        for (convidado of convidados) {
-            var elConvidado = document.createElement("li")
-            var elNome = document.createTextNode(convidado.nome);
+        function listarConvidados() {
+            elLista.innerHTML = ""; //comando para não duplicar os nomes já existentes
 
-            elConvidado.appendChild(elNome);
-            elLista.appendChild(elConvidado);
+            for (convidado of convidados) {
+                var elConvidado = document.createElement("li")
+                var elNome = document.createTextNode(convidado.nome);
+
+                elConvidado.appendChild(elNome);
+                elLista.appendChild(elConvidado);
+            }
         }
+        listarConvidados()
+        var adicionarConvidado = function () {
+            var nome = elCampo.value;
+            convidados.push({nome: nome})
+            console.log(nome);
+            elCampo.value = ""; // comando para limpar o campo de digitação após dado o 'Cadastrar'
+
+            listarConvidados()
+        }
+
+
+        elBotao.onclick = adicionarConvidado;
 
 
     </script>
