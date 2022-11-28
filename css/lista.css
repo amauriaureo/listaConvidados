@@ -1,0 +1,9 @@
+* {
+    font-family: 'Calibri';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+

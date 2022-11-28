@@ -19,8 +19,6 @@
     }
 
 
-
-
     function listarConvidados() {
         elLista.innerHTML = ""; //comando para não duplicar os nomes já existentes
 
@@ -47,8 +45,7 @@
             elConvidado.appendChild(elExcluir);
             elLista.appendChild(elConvidado);
         }
-    }        
+    }
 
 
-        
 listarConvidados()
